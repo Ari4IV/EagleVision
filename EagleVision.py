@@ -23,6 +23,8 @@ def EagleVision():
 if __name__ == '__main__':
     Process(target=httpserver).start()
     Process(target=EagleVision).start()
+    if not os.path.exists('C:\\temp\\image\\'):
+        os.makedirs('C:\\temp\\image\\')
     f = open('C:\\temp\\image\\index.html','wb')
     f.write("<title>EagleVision</title><img src='EagleVision.png' width='1280' height='720'><meta http-equiv='refresh' content='1.1'>".encode())
     f.close()
